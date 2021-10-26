@@ -8,8 +8,12 @@ function Header(props) {
         <h1>Swigato</h1>
       </div>
       <nav className={`${styles.nav}`}>
-        <div className={`${styles.navItem}`}>Cart </div>
-        <div className={`${styles.navItem}`}>About</div>
+        <div className={`${styles.navItem}`}>
+          <a href="/">About </a>
+        </div>
+        <div className={`${styles.navItem}`}>
+          <a href="/">Cart </a>
+        </div>
       </nav>
     </header>
   );
