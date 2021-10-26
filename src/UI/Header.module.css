@@ -2,18 +2,30 @@
   display: flex;
   align-items: center;
 
-  background-color: #894f1d;
+  background-color: #a55c1b;
+  background-color: aqua;
+  background-image: linear-gradient(
+    30deg,
+    #7a4516 0%,
+    #964f12 30%,
+    #7a4516 74%,
+    #964f17 95%
+  );
   width: 100%;
   height: 100%;
   color: #ecd795;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+  position: -webkit-sticky;
   position: sticky;
+
+  top: 0;
 }
 
 .brand {
   flex-grow: 1;
   height: 100%;
   padding: 1rem;
+  font-size: 1.2rem;
 }
 
 .nav {
@@ -26,8 +38,7 @@
 
 .navItem {
   margin-right: 2rem;
-  background-color: red;
-
+  font-size: 1.2rem;
   padding: 1.5rem 1rem;
   text-align: center;
 
