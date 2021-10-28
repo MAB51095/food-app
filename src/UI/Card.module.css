@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2rem;
+
+  background-color: #ecd795;
+
+
+
+  background: #ffe259;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f7ff81, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffdc68, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  margin: 0.5rem 0;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 20%);
+
+  position: relative;
+}
