@@ -1,0 +1,65 @@
+.menuItemForm {
+  display: flex;
+}
+
+.menuItem,
+.menuItemForm {
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  color: #703808;
+}
+
+.menuItemName {
+  width: 60%;
+}
+.menuItemPrice {
+  width: 20%;
+}
+
+.menuItemName,
+.menuItemPrice,
+.menuItemQuantity {
+  flex-wrap: wrap;
+}
+
+.menuItemQuantity {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menuItemQuantity input {
+  margin-left: 0.2rem;
+  width: 30%;
+  min-height: 2rem;
+
+  text-align: center;
+  background-color: wheat;
+
+  border: none;
+  appearance: none;
+}
+
+.menuItemQuantity input::-webkit-outer-spin-button,
+.menuItemQuantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.menuItemQuantityButton {
+  background-color: #a55c1b;
+
+  cursor: pointer;
+
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  color: wheat;
+}
