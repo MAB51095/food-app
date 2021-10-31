@@ -1,22 +1,75 @@
 .cartPage {
-  position: fixed;
   top: 0;
+  position: fixed;
 
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+
   z-index: 4;
   transform: scale(0);
   transition: transform linear 0.2s, background-color ease-out 1s;
 }
 
 .overlay {
-  min-width: 50vw;
-  min-height: 60vh;
+  position: relative;
+
+  min-height: 90%;
+  color: #a55c1b;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10vh 10% 10vh 10%;
+}
+
+.cartHeading {
+  position: absolute;
+  top: 0;
+
+  font-weight: bolder;
+
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid #a55c1b;
+}
+
+.cartItems {
+  height: 80%;
+  width: 100%;
+
+  position: absolute;
+  top: 10%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  align-content: center;
+
+  flex-wrap: wrap;
+  background-color: red;
+  flex-grow: 1;
+}
+
+.total {
+  min-width: 100%;
+  height: 10%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: flex-end;
+
+  font-weight: bolder;
+  padding: 1rem;
+
+  border-top: 1px solid #a55c1b;
+}
+
+.total div {
+  flex-grow: 1;
+  width: 50%;
+  text-align: right;
 }
 
 .show {
@@ -45,6 +98,7 @@
   cursor: pointer;
 
   color: wheat;
+  z-index: 4;
 }
 
 @media (max-width: 660px) {
