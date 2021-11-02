@@ -14,49 +14,28 @@ function CartModal(props) {
   };
   return (
     <div className={`${styles.cartPage} ${ctxCart.isCartOpen && styles.show}`}>
-      <Card className={`${styles.overlay}`}>
+      <Card className={`${styles.cart}`}>
         <div className={`${styles.close}`} onClick={closeCart}>
           X
         </div>
         <div className={`${styles.cartHeading}`}>Order Invoice - Preview</div>
         <div className={`${styles.cartItems}`}>
-          {ctxCart.cartItems.map((item) => (
-            <div>{item.name}</div>
-          ))}
-          {ctxCart.cartItems.map((item) => (
-            <div>{item.name}</div>
-          ))}
-          {ctxCart.cartItems.map((item) => (
-            <div>{item.name}</div>
-          ))}
-          {ctxCart.cartItems.map((item) => (
-            <div>{item.name}</div>
-          ))}
-          {ctxCart.cartItems.map((item) => (
-            <div>{item.name}</div>
-          ))}
-          {ctxCart.cartItems.map((item) => (
-            <div>{item.name}</div>
-          ))}
-          {ctxCart.cartItems.map((item) => (
-            <div>{item.name}</div>
-          ))}
-          {ctxCart.cartItems.map((item) => (
-            <div>{item.name}</div>
-          ))}
-          {ctxCart.cartItems.map((item) => (
-            <div>{item.name}</div>
-          ))}
-          {ctxCart.cartItems.map((item) => (
-            <div>{item.name}</div>
-          ))}
-          {ctxCart.cartItems.map((item) => (
-            <div>{item.name}</div>
+          <div className={`${styles.cartItem} ${styles.cartItemHeading}`}>
+            <div>Name</div>
+            <div>Price</div>
+            <div>Qty</div>
+          </div>
+          {ctxCart.cartItems.map((item, id) => (
+            <div className={`${styles.cartItem}`}>
+              <div>{item.name}</div>
+              <div>₹ {item.price}/- </div>
+              <div> x{item.quantity}</div>
+            </div>
           ))}
         </div>
         <div className={`${styles.total}`}>
           <div>Total</div>
-          <div>Inr 0.00 /-</div>
+          <div>₹ 0.00 /-</div>
         </div>
       </Card>
     </div>

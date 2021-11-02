@@ -28,7 +28,7 @@ function MenuItem(props) {
         <div className={`${styles.menuItemName}`}>{props.item.name}</div>
         <div
           className={`${styles.menuItemPrice}`}
-        >{`Inr ${props.item.price}/-`}</div>
+        >{`₹ ${props.item.price}/-`}</div>
 
         <div className={`${styles.menuItemQuantity}`}>
           <div

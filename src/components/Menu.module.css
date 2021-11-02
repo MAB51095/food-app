@@ -1,5 +1,5 @@
 .menu {
-  min-width: 80%;
+  min-width: 90%;
   min-height: 90vh;
   margin-top: 1rem;
   background: #ef3b36; /* fallback for old browsers */
@@ -9,10 +9,4 @@
     #ef3b36
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #dc281e, #ef3b36);
-}
-
-.menuItem {
-  flex-direction: row;
-  min-width: 80%;
-  justify-content: space-around;
 }
