@@ -8,10 +8,10 @@ import MenuItem from "./MenuItem";
 function CartModal(props) {
   const ctxCart = useContext(CartContext);
 
-  console.log(ctxCart.isCartOpen);
   const closeCart = (e) => {
     ctxCart.toggleCartOpenHandler();
   };
+
   return (
     <div className={`${styles.cartPage} ${ctxCart.isCartOpen && styles.show}`}>
       <Card className={`${styles.cart}`}>
@@ -19,23 +19,41 @@ function CartModal(props) {
           X
         </div>
         <div className={`${styles.cartHeading}`}>Order Invoice - Preview</div>
-        <div className={`${styles.cartItems}`}>
-          <div className={`${styles.cartItem} ${styles.cartItemHeading}`}>
-            <div>Name</div>
-            <div>Price</div>
-            <div>Qty</div>
+        {ctxCart.cartItems.length <= 0 && (
+          <div className={`${styles.cartItems}`}>
+            There are no items in Cart
           </div>
-          {ctxCart.cartItems.map((item, id) => (
-            <div className={`${styles.cartItem}`}>
-              <div>{item.name}</div>
-              <div>₹ {item.price}/- </div>
-              <div> x{item.quantity}</div>
+        )}
+        {ctxCart.cartItems.length > 0 && (
+          <div className={`${styles.cartItems}`}>
+            <div className={`${styles.cartItem} ${styles.cartItemHeading}`}>
+              <div>Name</div>
+              <div>Price</div>
+              <div>Qty</div>
+              <div className={`${styles.cartItemAmount}`}>Amount</div>
             </div>
-          ))}
-        </div>
+
+            {ctxCart.cartItems.map((item, id) => (
+              <div className={`${styles.cartItem}`}>
+                <div>{item.name}</div>
+                <div>₹ {item.price}/- </div>
+                <div> x{item.quantity}</div>
+                <div className={`${styles.cartItemAmount}`}>
+                  {(item.price * item.quantity).toFixed(2)} /-
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
         <div className={`${styles.total}`}>
           <div>Total</div>
-          <div>₹ 0.00 /-</div>
+          <div>
+            {`₹ ${ctxCart.cartItems
+              .reduce((total, item) => {
+                return total + item.price * item.quantity;
+              }, 0)
+              .toFixed(2)}/-`}
+          </div>
         </div>
       </Card>
     </div>

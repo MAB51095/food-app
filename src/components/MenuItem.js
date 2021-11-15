@@ -1,25 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import CartContext from "../context/cart-context";
 import Card from "../UI/Card";
 import styles from "./MenuItem.module.css";
-function MenuItem(props) {
-  const [quantity, setQuantity] = useState(0);
 
-  const QuantityOnChangeHandler = (e) => {
-    setQuantity(e.target.value);
+function MenuItem(props) {
+  const ctxCart = useContext(CartContext);
+
+  const CartItemHandler = (cartItem) => {
+    ctxCart.AddToCart(cartItem);
   };
 
+  const [quantity, setQuantity] = useState(0);
+
   const QuantityButtonAction = (e) => {
+    let cartItem = { ...props.item };
+
     if (e.target.textContent == "+") {
       setQuantity((qty) => {
         return qty + 1;
       });
+      cartItem = { ...cartItem, quantity: quantity + 1 };
     } else {
-      if (quantity === 0) return;
-      else
+      if (quantity === 0) {
+        cartItem = { ...cartItem, quantity: 0 };
+      } else {
         setQuantity((qty) => {
           return qty - 1;
         });
+        cartItem = { ...cartItem, quantity: quantity - 1 };
+      }
     }
+
+    CartItemHandler(cartItem);
   };
 
   return (
