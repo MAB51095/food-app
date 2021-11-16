@@ -24,7 +24,7 @@ export const CartContextProvider = (props) => {
       itemsInCart[i] = { ...itemsInCart[i], quantity: cartItem.quantity };
     }
 
-    setCartItems(itemsInCart.filter((item) => item.quantity != 0));
+    setCartItems(itemsInCart.filter((item) => item.quantity !== 0));
   };
 
   const toggleCartOpenHandler = () => {

@@ -34,7 +34,7 @@ function CartModal(props) {
             </div>
 
             {ctxCart.cartItems.map((item, id) => (
-              <div className={`${styles.cartItem}`}>
+              <div className={`${styles.cartItem}`} key={item.id}>
                 <div>{item.name}</div>
                 <div>₹ {item.price}/- </div>
                 <div> x{item.quantity}</div>

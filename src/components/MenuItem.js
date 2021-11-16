@@ -49,7 +49,7 @@ function MenuItem(props) {
           >
             {"-"}
           </div>
-          <input type="number" min="0" value={quantity} />
+          <input type="number" min="0" value={quantity} onChange={() => {}} />
           <div
             className={`${styles.menuItemQuantityButton}`}
             onClick={QuantityButtonAction}
